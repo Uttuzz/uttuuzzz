@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,161 +6,105 @@
     <title>Apology Letter</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Georgia&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f0e4d7;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://www.transparenttextures.com/patterns/silk-pattern.png');
-            scroll-behavior: smooth; /* Smooth scrolling */
-            position: relative; /* Make the body a relative container */
-            height: 100vh; /* Ensure the page takes the full height */
-        }
+       body {
+    font-family: 'Georgia', serif;
+    background-color: #f0e4d7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/silk-pattern.png');
+    scroll-behavior: smooth;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh;
+    text-align: center; /* Center text */
+}
 
-        header {
-            text-align: center;
-            padding: 60px 30px;
-            background-color: #ffb6c1;
-            color: white;
-            border-bottom: 5px solid #ff6347;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 2;
-        }
+header {
+    text-align: center;
+    padding: 60px 30px;
+    background-color: #ffb6c1;
+    color: white;
+    border-bottom: 5px solid #ff6347;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    width: 100%; /* Ensure it spans the full width */
+}
 
-        header h1 {
-            font-size: 48px;
-            font-family: 'Dancing Script', cursive;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out;
-        }
+header h1 {
+    font-size: 48px;
+    font-family: 'Dancing Script', cursive;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out;
+}
 
-        header p {
-            font-size: 20px;
-            font-style: italic;
-            animation: fadeIn 3s ease-in-out;
-        }
+header p {
+    font-size: 20px;
+    font-style: italic;
+    animation: fadeIn 3s ease-in-out;
+}
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+.content {
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column; /* Stack photos and letter vertically */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
 
-        .content {
-            text-align: center;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-        }
+.letter {
+    background-color: #fff;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeInUp 2s ease-in-out forwards;
+}
 
-        .photos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px;
-            max-width: 450px;
-            justify-content: center;
-        }
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffb6c1;
+    color: white;
+    font-size: 18px;
+    width: 100%; /* Ensure footer spans the full width */
+}
 
-        .photos img {
-            max-width: 180px;
-            max-height: 180px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
+/* Interactive Button */
+.cta-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
 
-        .photos img:hover {
-            transform: scale(1.1);
-        }
+.cta-button:hover {
+    background-color: #f08080;
+}
 
-        .letter {
-            background-color: #fff;
-            padding: 40px;
-            margin: 20px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            max-width: 650px;
-            text-align: left;
-            position: relative;
-            z-index: 2;
-            font-size: 18px;
-            opacity: 0;
-            animation: fadeInUp 2s ease-in-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .letter h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            font-family: 'Dancing Script', cursive;
-            color: #ff6347;
-        }
-
-        .letter p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .letter a {
-            color: #ff6347;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
-            border-bottom: 2px solid #ff6347;
-            transition: all 0.3s ease;
-        }
-
-        .letter a:hover {
-            color: #f08080;
-            border-color: #f08080;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #ffb6c1;
-            color: white;
-            font-size: 18px;
-        }
-
-        /* Interactive Button */
-        .cta-button {
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 30px;
-        }
-
-        .cta-button:hover {
-            background-color: #f08080;
-        }
-
-        .cta-button:active {
-            transform: scale(0.98);
-        }
-
-        /* Positioning images at the corners */
+.cta-button:active {
+    transform: scale(0.98);
+}
+/* Positioning images at the corners */
         .corner-image {
             position: absolute;
             width: 250px; /* Larger image size */
@@ -185,11 +129,10 @@
 
 <div class="content">
     <div class="photos">
-      <img src="https://raw.githubusercontent.com/Uttuzz/uttuuzzz/refs/heads/main/IMG-20250220-WA0003.jpg" alt="Photo 3">
+        <img src="https://raw.githubusercontent.com/Uttuzz/uttuuzzz/refs/heads/main/IMG-20250220-WA0003.jpg" alt="Photo 3">
         <img src="https://raw.githubusercontent.com/Uttuzz/uttuuzzz/refs/heads/main/IMG-20250220-WA0004.jpg" alt="Photo 4">
         <img src="https://raw.githubusercontent.com/Uttuzz/uttuuzzz/refs/heads/main/IMG-20250220-WA0005.jpg" alt="Photo 5">
         <img src="https://raw.githubusercontent.com/Uttuzz/uttuuzzz/refs/heads/main/IMG-20250220-WA0006.jpg" alt="Photo 6">
-    </div>
     </div>
 
     <div class="letter">
